@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Régine Salomé Andzanga</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #2a2a2a;
+    background: #ece7e0;
+    line-height: 1.85;
+    font-weight: 300;
+    font-size: 16px;
+  }
+
+  a { color: #d4a07a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── NAV ── */
+  nav {
+    padding: 2.5rem 4rem;
+    display: flex;
+    align-items: baseline;
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  nav .name a {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #3a4a3a;
+    letter-spacing: -0.01em;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  nav ul a {
+    color: #2a2a2a;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-decoration: none;
+  }
+  nav ul a:hover { text-decoration: underline; }
+  nav ul a.active { text-decoration: underline; text-underline-offset: 4px; }
+
+  /* ── ABOUT / HERO ── */
+  .about {
+    display: flex;
+    gap: 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 4rem 5rem;
+    align-items: flex-start;
+  }
+  .about-text {
+    flex: 1;
+    padding-top: 1rem;
+  }
+  .about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #3a4a3a;
+    margin-bottom: 2.5rem;
+    line-height: 1.1;
+  }
+  .about-text p {
+    color: #2a2a2a;
+    max-width: 540px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+  .about-text p a {
+    color: #d4a07a;
+  }
+  .about-photo {
+    width: 460px;
+    flex-shrink: 0;
+  }
+  .about-photo .photo-frame {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: #d5d0c8;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .about-photo .photo-frame span {
+    color: #999;
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+  .about-photo .caption {
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    color: #888;
+    line-height: 1.5;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 4rem 5rem;
+  }
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: #3a4a3a;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+  }
+  .section-divider {
+    border: none;
+    border-top: 1px solid #d5d0c8;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
+  /* ── RESEARCH ── */
+  .research-list {
+    max-width: 640px;
+  }
+  .research-item {
+    margin-bottom: 2rem;
+  }
+  .research-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #3a4a3a;
+    margin-bottom: 0.3rem;
+  }
+  .research-item p {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  /* ── PUBLICATIONS ── */
+  .pub-list {
+    max-width: 640px;
+  }
+  .pub-item {
+    margin-bottom: 2.2rem;
+  }
+  .pub-item .pub-type {
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #d4a07a;
+    margin-bottom: 0.2rem;
+  }
+  .pub-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #2a2a2a;
+    margin-bottom: 0.2rem;
+  }
+  .pub-item p {
+    font-size: 0.88rem;
+    color: #777;
+  }
+
+  /* ── LANGUAGE CENTER ── */
+  .center-block {
+    max-width: 640px;
+  }
+  .center-block p {
+    font-size: 0.95rem;
+    color: #2a2a2a;
+    margin-bottom: 1rem;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-list { max-width: 640px; }
+  .edu-item { margin-bottom: 1.2rem; }
+  .edu-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #3a4a3a;
+  }
+  .edu-item p {
+    font-size: 0.88rem;
+    color: #777;
+  }
+
+  /* ── CONTACT ── */
+  .contact-block {
+    max-width: 640px;
+  }
+  .contact-block p {
+    font-size: 0.95rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 3rem 4rem;
+    font-size: 0.75rem;
+    color: #aaa;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    nav {
+      padding: 1.5rem 2rem;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    nav ul { gap: 1.2rem; flex-wrap: wrap; }
+    .about {
+      flex-direction: column-reverse;
+      padding: 2rem 2rem 3rem;
+      gap: 2.5rem;
+    }
+    .about-photo { width: 100%; max-width: 340px; }
+    .about-text h2 { font-size: 2.4rem; }
+    .section { padding: 3rem 2rem; }
+    .section h2 { font-size: 2rem; }
+    .section-divider { margin-left: 2rem; margin-right: 2rem; }
+    footer { padding: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="name"><a href="#">Régine Salomé Andzanga</a></div>
+  <ul>
+    <li><a href="#about" class="active">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#center">Language Center</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="about" id="about">
+  <div class="about-text">
+    <h2>About</h2>
+    <p>
+      Régine Salomé Andzanga is a sociolinguist and author from Cameroon. Her research examines the acquisition of French literacy in multilingual and bilingual educational contexts, with a focus on the interplay of language policy, pedagogy, and cultural identity across Cameroon's dual education systems.
+    </p>
+    <p>
+      She earned her PhD in Linguistics from the Université Michel de Montaigne–Bordeaux&nbsp;3 in 2015, under the supervision of Professor Mwatha Musanji Ngalasso. Her doctoral work, based on extensive fieldwork in the bilingual lycées of Yaoundé and Buea, was published as a 458-page monograph by Éditions Proximité and is held at <a href="#">Stanford University Libraries</a>.
+    </p>
+    <p>
+      Alongside her scholarly work, she is a published novelist and playwright. Her creative writing explores widowhood, gender, marriage, and the tensions between tradition and modernity in contemporary Cameroon.
+    </p>
+    <p>
+      She founded and directs the <a href="#center">Centre for the Preservation of African Languages</a>, dedicated to the documentation and revitalization of endangered languages in Central Africa.
+    </p>
+    <p style="margin-top: 0.5rem;">
+      Outside of work she grows mushrooms.
+    </p>
+  </div>
+  <div class="about-photo">
+    <div class="photo-frame">
+      <span>[ Photo ]</span>
+    </div>
+    <p class="caption">Dr. Régine Salomé Andzanga, linguist and author.</p>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="section" id="research">
+  <h2>Research</h2>
+  <div class="research-list">
+    <div class="research-item">
+      <h3>Bilingual Education &amp; Literacy</h3>
+      <p>French reading and writing acquisition in Cameroon's Francophone and Anglophone school systems, drawing on fieldwork in the bilingual lycées of Yaoundé and Buea.</p>
+    </div>
+    <div class="research-item">
+      <h3>Sociolinguistics</h3>
+      <p>Code-switching, language contact, and multilingual pedagogy in postcolonial contexts.</p>
+    </div>
+    <div class="research-item">
+      <h3>Language Policy &amp; Education</h3>
+      <p>Public education policy, cultural diversity, and the politics of language in Central Africa.</p>
+    </div>
+    <div class="research-item">
+      <h3>Language Preservation</h3>
+      <p>Documentation and revitalization of endangered African languages through community engagement and scholarly research.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="section" id="publications">
+  <h2>Publications</h2>
+  <div class="pub-list">
+    <div class="pub-item">
+      <div class="pub-type">Scholarly Monograph</div>
+      <h3>Appropriation de la lecture et de l'écriture du français au Cameroun: cas des lycées bilingues de Yaoundé et de Buea</h3>
+      <p>Éditions Proximité, Yaoundé, 2017 · 458 pp.</p>
+    </div>
+    <div class="pub-item">
+      <div class="pub-type">Novel</div>
+      <h3>L'Absence</h3>
+      <p>Publibook, Paris, 2018 — Widowhood, grief, and resilience against patriarchal mourning traditions in Cameroon.</p>
+    </div>
+    <div class="pub-item">
+      <div class="pub-type">Drama</div>
+      <h3>[Title to be confirmed]</h3>
+      <p>A dramatic work blending humor and social commentary on gender, marriage, and the tensions between tradition and modernity.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="section" id="center">
+  <h2>Language Center</h2>
+  <div class="center-block">
+    <p>
+      Dr. Andzanga founded and directs the Centre for the Preservation of African Languages, dedicated to the documentation, preservation, and promotion of endangered languages in Cameroon and Central Africa — working at the intersection of community engagement and scholarly research.
+    </p>
+    <p><em>More details coming soon.</em></p>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="section" id="contact">
+  <h2>Contact</h2>
+  <div class="contact-block">
+    <p><a href="mailto:regine.andzanga1@gmail.com">regine.andzanga1@gmail.com</a></p>
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 Régine Salomé Andzanga
+</footer>
+
+</body>
+</html>
